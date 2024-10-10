@@ -34,6 +34,30 @@
         },
       };
     </script>
+
+    <!-- custom css -->
+    <style>
+      /* spinner styles */
+      #spinner {
+        display: none;
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-top: 4px solid #000;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 20px auto;
+      }
+      /* spinner animations */
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
   </head>
   <body class="font-poppins">
     <header></header>
@@ -46,8 +70,10 @@
           <h3 class="text-4xl font-semibold mb-8">Search Your Phone</h3>
 
           <!-- search -->
-          <div class="flex items-center -space-x-28 mb-12">
-            <label class="input lg:w-[752px] w-96 flex items-center gap-2 border-none">
+          <div class="flex items-center -space-x-28">
+            <label
+              class="input lg:w-[752px] w-96 flex items-center gap-2 border-none"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 16 16"
@@ -60,61 +86,47 @@
                   clip-rule="evenodd"
                 />
               </svg>
-              <input type="text" class="grow" placeholder="Search your phone" />
+              <input
+                id="search-box"
+                type="text"
+                class="grow"
+                placeholder="Search your phone"
+              />
             </label>
             <button
+              onclick="handleSearch()"
               class="btn bg-[#0D6EFD] text-xl font-bold font-poppins text-white"
             >
               Search
             </button>
           </div>
+
+          <!-- spinner -->
+          <div id="spinner"></div>
         </div>
 
         <!-- card container -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-6">
-          <!-- card -->
-          <div class="border rounded-lg flex justify-center items-center">
-            <div class="p-6">
-              <!-- image container -->
-              <div class="w-[314px] rounded-lg px-20 py-10">
-                <img src="./assets/phone_card_demo_image.png" alt="" />
-              </div>
+        <div
+          id="phones-container"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-6 py-12"
+        >
+          <!-- cards will go here -->
+        </div>
 
-              <!-- text container -->
-              <div class="px-9">
-                <h4 class="text-2xl font-bold mt-6 mb-5">iPhone 8</h4>
-                <p class="text-lg font-normal text-gray-600">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Doloribus, ullam!
-                </p>
-                <h5 class="text-2xl font-bold mt-2 mb-4">$<span>999</span></h5>
-                <button
-                  class="btn bg-[#0D6EFD] text-xl font-bold font-poppins text-white"
-                >
-                  Show Details
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- card -->
-          <div class="bg-green-400 border">card 1</div>
-
-          <!-- card -->
-          <div class="bg-green-400 border">card 1</div>
-
-          <!-- card -->
-          <div class="bg-green-400 border">card 1</div>
-
-          <!-- card -->
-          <div class="bg-green-400 border">card 1</div>
-
-          <!-- card -->
-          <div class="bg-green-400 border">card 1</div>
+        <!-- show all button -->
+        <div>
+          <button
+            onclick="handleShowAll()"
+            class="btn bg-[#0D6EFD] text-xl font-bold font-poppins text-white"
+          >
+            Show Details
+          </button>
         </div>
       </section>
     </main>
 
     <footer></footer>
+
+    <script src="./scripts/app.js"></script>
   </body>
 </html>
