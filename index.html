@@ -40,10 +40,77 @@
 
     <main>
       <!-- search & phone list section -->
-      <section class="w-11/12 mx-auto">
-        <!-- search -->
-        <div>
-          <h3 class="">Search Your Phone</h3>
+      <section class="w-11/12 mx-auto text-center">
+        <!-- search & title-->
+        <div class="flex flex-col items-center">
+          <h3 class="text-4xl font-semibold mb-8">Search Your Phone</h3>
+
+          <!-- search -->
+          <div class="flex items-center -space-x-28 mb-12">
+            <label class="input lg:w-[752px] w-96 flex items-center gap-2 border-none">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+                class="h-4 w-4 opacity-70"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <input type="text" class="grow" placeholder="Search your phone" />
+            </label>
+            <button
+              class="btn bg-[#0D6EFD] text-xl font-bold font-poppins text-white"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+
+        <!-- card container -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-6">
+          <!-- card -->
+          <div class="border rounded-lg flex justify-center items-center">
+            <div class="p-6">
+              <!-- image container -->
+              <div class="w-[314px] rounded-lg px-20 py-10">
+                <img src="./assets/phone_card_demo_image.png" alt="" />
+              </div>
+
+              <!-- text container -->
+              <div class="px-9">
+                <h4 class="text-2xl font-bold mt-6 mb-5">iPhone 8</h4>
+                <p class="text-lg font-normal text-gray-600">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Doloribus, ullam!
+                </p>
+                <h5 class="text-2xl font-bold mt-2 mb-4">$<span>999</span></h5>
+                <button
+                  class="btn bg-[#0D6EFD] text-xl font-bold font-poppins text-white"
+                >
+                  Show Details
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- card -->
+          <div class="bg-green-400 border">card 1</div>
+
+          <!-- card -->
+          <div class="bg-green-400 border">card 1</div>
+
+          <!-- card -->
+          <div class="bg-green-400 border">card 1</div>
+
+          <!-- card -->
+          <div class="bg-green-400 border">card 1</div>
+
+          <!-- card -->
+          <div class="bg-green-400 border">card 1</div>
         </div>
       </section>
     </main>
