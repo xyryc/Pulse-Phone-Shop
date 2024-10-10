@@ -70,7 +70,35 @@ const phoneDetails = async (slug) => {
     `https://openapi.programming-hero.com/api/phone/${slug}`
   );
   const data = await response.json();
-  console.log(data);
+  console.log(data.data.mainFeatures.storage);
+
+  const modalContainer = document.getElementById("modal-container");
+  modalContainer.innerHTML = `
+          <dialog id="detailsModal" class="modal">
+            <div class="modal-box text-left w-11/12 max-w-5xl">
+              <img class="mx-auto mb-11 md:mb-20" src='${data.data.image}'> 
+              <h3 class="text-3xl font-bold">${data.data.name}</h3>
+              <p class='mt-6 mb-5'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+              </p>
+              <p class="text-xl font-semibold">Storage: <span class="text-lg font-normal text-[#706F6F]">${data.data.mainFeatures.storage}</span>
+              <p class="text-xl font-semibold">Display Size: <span class="text-lg font-normal text-[#706F6F]">${data.data.mainFeatures.displaySize}</span>
+              <p class="text-xl font-semibold">Chipset: <span class="text-lg font-normal text-[#706F6F]">${data.data.mainFeatures.chipset}</span>
+              <p class="text-xl font-semibold">Memory: <span class="text-lg font-normal text-[#706F6F]">${data.data.mainFeatures.memory}</span>
+              <p class="text-xl font-semibold">Slug: <span class="text-lg font-normal text-[#706F6F]">${data.data.slug}</span>
+              <p class="text-xl font-semibold">Release Date: <span class="text-lg font-normal text-[#706F6F]">${data.data.releaseDate}</span>
+              <p class="text-xl font-semibold">Brand: <span class="text-lg font-normal text-[#706F6F]">${data.data.brand}</span>
+              <p class="text-xl font-semibold">GPS: <span class="text-lg font-normal text-[#706F6F]">${data.data.others.GPS}</span>
+              <div class="modal-action">
+                <form method="dialog">
+                  <!-- if there is a button in form, it will close the modal -->
+                  <button class="btn">Close</button>
+                </form>
+              </div>
+            </div>
+          </dialog>
+  `;
+
+  detailsModal.showModal();
 };
 
 loadAllPhones();
