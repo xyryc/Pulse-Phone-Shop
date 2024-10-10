@@ -37,6 +37,7 @@ const displayAllPhones = (phones) => {
                 </p>
                 <h5 class="text-2xl font-bold mt-2 mb-4">$<span>999</span></h5>
                 <button
+                  onclick="phoneDetails('${phone.slug}')"
                   class="btn bg-[#0D6EFD] text-xl font-bold font-poppins text-white"
                 >
                   Show Details
@@ -62,6 +63,14 @@ const handleSearch = () => {
   setTimeout(() => {
     loadAllPhones(false, searchText);
   }, 2000);
+};
+
+const phoneDetails = async (slug) => {
+  const response = await fetch(
+    `https://openapi.programming-hero.com/api/phone/${slug}`
+  );
+  const data = await response.json();
+  console.log(data);
 };
 
 loadAllPhones();
