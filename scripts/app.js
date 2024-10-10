@@ -16,6 +16,7 @@ const loadAllPhones = async (status, brandName) => {
 };
 
 const displayAllPhones = (phones) => {
+  document.getElementById("phones-container").innerHTML = "";
   const phonesContainer = document.getElementById("phones-container");
 
   phones.forEach((phone) => {
@@ -70,7 +71,6 @@ const phoneDetails = async (slug) => {
     `https://openapi.programming-hero.com/api/phone/${slug}`
   );
   const data = await response.json();
-  console.log(data.data.mainFeatures.storage);
 
   const modalContainer = document.getElementById("modal-container");
   modalContainer.innerHTML = `
@@ -80,18 +80,34 @@ const phoneDetails = async (slug) => {
               <h3 class="text-3xl font-bold">${data.data.name}</h3>
               <p class='mt-6 mb-5'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
               </p>
-              <p class="text-xl font-semibold">Storage: <span class="text-lg font-normal text-[#706F6F]">${data.data.mainFeatures.storage}</span>
-              <p class="text-xl font-semibold">Display Size: <span class="text-lg font-normal text-[#706F6F]">${data.data.mainFeatures.displaySize}</span>
-              <p class="text-xl font-semibold">Chipset: <span class="text-lg font-normal text-[#706F6F]">${data.data.mainFeatures.chipset}</span>
-              <p class="text-xl font-semibold">Memory: <span class="text-lg font-normal text-[#706F6F]">${data.data.mainFeatures.memory}</span>
-              <p class="text-xl font-semibold">Slug: <span class="text-lg font-normal text-[#706F6F]">${data.data.slug}</span>
-              <p class="text-xl font-semibold">Release Date: <span class="text-lg font-normal text-[#706F6F]">${data.data.releaseDate}</span>
-              <p class="text-xl font-semibold">Brand: <span class="text-lg font-normal text-[#706F6F]">${data.data.brand}</span>
-              <p class="text-xl font-semibold">GPS: <span class="text-lg font-normal text-[#706F6F]">${data.data.others.GPS}</span>
+              <p class="text-xl font-semibold">Storage: <span class="text-lg font-normal text-[#706F6F]">${
+                data.data.mainFeatures?.storage ?? "N/A"
+              }</span></p>
+              <p class="text-xl font-semibold">Display Size: <span class="text-lg font-normal text-[#706F6F]">${
+                data.data.mainFeatures?.displaySize ?? "N/A"
+              }</span></p>
+              <p class="text-xl font-semibold">Chipset: <span class="text-lg font-normal text-[#706F6F]">${
+                data.data.mainFeatures?.chipset ?? "N/A"
+              }</span></p>
+              <p class="text-xl font-semibold">Memory: <span class="text-lg font-normal text-[#706F6F]">${
+                data.data.mainFeatures?.memory ?? "N/A"
+              }</span></p>
+              <p class="text-xl font-semibold">Slug: <span class="text-lg font-normal text-[#706F6F]">${
+                data.data.slug ?? "N/A"
+              }</span></p>
+              <p class="text-xl font-semibold">Release Date: <span class="text-lg font-normal text-[#706F6F]">${
+                data.data.releaseDate ?? "N/A"
+              }</span></p>
+              <p class="text-xl font-semibold">Brand: <span class="text-lg font-normal text-[#706F6F]">${
+                data.data.brand ?? "N/A"
+              }</span></p>
+              <p class="text-xl font-semibold">GPS: <span class="text-lg font-normal text-[#706F6F]">${
+                data.data.others?.GPS ?? "N/A"
+              }</span>
               <div class="modal-action">
                 <form method="dialog">
                   <!-- if there is a button in form, it will close the modal -->
-                  <button class="btn">Close</button>
+                  <button class="btn btn-error text-white">Close</button>
                 </form>
               </div>
             </div>
