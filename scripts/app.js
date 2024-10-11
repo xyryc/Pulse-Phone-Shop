@@ -78,7 +78,7 @@ const phoneDetails = async (slug) => {
             <div class="modal-box text-left w-11/12 max-w-5xl">
               <img class="mx-auto mb-11 md:mb-20" src='${data.data.image}'> 
               <h3 class="text-3xl font-bold">${data.data.name}</h3>
-              <p class='mt-6 mb-5'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+              <p class='mt-6 mb-5'>With its sleek design and advanced features, the ${data.data.name} is engineered to enhance your daily experience.
               </p>
               <p class="text-xl font-semibold">Storage: <span class="text-lg font-normal text-[#706F6F]">${
                 data.data.mainFeatures?.storage ?? "N/A"
