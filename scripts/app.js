@@ -25,7 +25,7 @@ const displayAllPhones = (phones) => {
           <div class="border rounded-lg flex justify-center items-center">
             <div class="p-6">
               <!-- image container -->
-              <div class="w-[314px] rounded-lg px-20 py-10">
+              <div class="w-[314px] rounded-lg px-20 py-10 mx-auto">
                 <img src="${phone.image}" alt="" />
               </div>
 
@@ -39,7 +39,7 @@ const displayAllPhones = (phones) => {
                 <h5 class="text-2xl font-bold mt-2 mb-4">$<span>999</span></h5>
                 <button
                   onclick="phoneDetails('${phone.slug}')"
-                  class="btn bg-[#0D6EFD] text-xl font-bold font-poppins text-white"
+                  class="btn bg-[#0D6EFD] 2xl:text-xl 2xl:font-bold font-poppins text-white"
                 >
                   Show Details
                 </button>
@@ -78,7 +78,7 @@ const phoneDetails = async (slug) => {
             <div class="modal-box text-left w-11/12 max-w-5xl">
               <img class="mx-auto mb-11 md:mb-20" src='${data.data.image}'> 
               <h3 class="text-3xl font-bold">${data.data.name}</h3>
-              <p class='mt-6 mb-5'>With its sleek design and advanced features, the ${data.data.name} is engineered to enhance your daily experience.
+              <p class='mt-6 mb-5 w-4/6'>With its sleek design and advanced features, the ${data.data.name} is engineered to enhance your daily experience.
               </p>
               <p class="text-xl font-semibold">Storage: <span class="text-lg font-normal text-[#706F6F]">${
                 data.data.mainFeatures?.storage ?? "N/A"
