@@ -12,6 +12,10 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Tailwind Css & DaisyUI -->
     <link
@@ -29,14 +33,25 @@
             },
             fontFamily: {
               poppins: "Poppins",
+              openSans: "Open Sans",
             },
           },
         },
       };
     </script>
 
+    <!-- icons cdn -->
+    <script
+      src="https://kit.fontawesome.com/651adfbaf7.js"
+      crossorigin="anonymous"
+    ></script>
+
     <!-- custom css -->
     <style>
+      .footer-bg {
+        background-color: rgba(13, 110, 253, 0.05);
+      }
+
       /* spinner styles */
       #spinner {
         display: none;
@@ -84,7 +99,7 @@
         <div>
           <img class="w-3/4 mx-auto" src="./assets/iPhone16.png" alt="" />
         </div>
-        
+
         <!-- title container -->
         <div class="text-center py-16">
           <h1 class="text-[65px] font-bold">Apple iPhone 16 Pro Max</h1>
@@ -168,7 +183,68 @@
       </section>
     </main>
 
-    <footer></footer>
+    <footer class=" footer-bg font-openSans mt-28">
+      <div class="w-11/12 mx-auto py-28">
+        <!-- top -->
+        <div class="flex flex-col md:flex-row justify-between items-center gap-9">
+          <div>
+            <h2 class="text-[45px] font-bold">Pulse</h2>
+            <p class="text-lg font-semibold text-[#706F6F]">
+              You can definitely work.
+            </p>
+          </div>
+
+          <div class="flex flex-col md:flex-row items-center gap-7">
+            <img src="./assets/facebook.png" alt="" />
+            <img src="./assets/twitter.png" alt="" />
+            <img src="./assets/Instagram.png" alt="" />
+            <button
+              class="btn bg-[#0D6EFD] text-xl font-bold font-openSans text-white"
+            >
+              Join Premium
+            </button>
+          </div>
+        </div>
+
+        <!-- divider -->
+         <div class="divider py-12"></div>
+
+         <!-- bottom -->
+          <div class="font-poppins grid grid-cols-2 lg:grid-cols-4 justify-around items-center gap-9 lg:gap-[160px] ">
+            <div class="space-y-3">
+              <p class="text-xl font-medium text-[#403F3F]">Products</p>
+              <p class="text-xl font-medium text-[#403F3F]">Browse Phones</p>
+              <p class="text-xl font-medium text-[#403F3F]">Browse Tablets</p>
+              <p class="text-xl font-medium text-[#403F3F]">Browse Laptops</p>
+              <p class="text-xl font-medium text-[#403F3F]">Browse Watches</p>
+            </div>
+
+            <div class="space-y-3">
+              <p class="text-xl font-medium text-[#403F3F]">Popular</p>
+              <p class="text-xl font-medium text-[#403F3F]">iPhone</p>
+              <p class="text-xl font-medium text-[#403F3F]">Samsung</p>
+              <p class="text-xl font-medium text-[#403F3F]">Huawei</p>
+              <p class="text-xl font-medium text-[#403F3F]">Sony</p>
+            </div>
+
+            <div class="space-y-3">
+              <p class="text-xl font-medium text-[#403F3F]">Resource</p>
+              <p class="text-xl font-medium text-[#403F3F]">Faq</p>
+              <p class="text-xl font-medium text-[#403F3F]">Support</p>
+              <p class="text-xl font-medium text-[#403F3F]">Privacy Policy</p>
+              <p class="text-xl font-medium text-[#403F3F]">Terms of Service</p>
+            </div>
+
+            <div class="space-y-3">
+              <p class="text-xl font-medium text-[#403F3F]">Company</p>
+              <p class="text-xl font-medium text-[#403F3F]">About Us</p>
+              <p class="text-xl font-medium text-[#403F3F]">Contact Us</p>
+              <p class="text-xl font-medium text-[#403F3F]">Career</p>
+              <p class="text-xl font-medium text-[#403F3F]">Life at Pulse</p>
+            </div>
+          </div>
+      </div>
+    </footer>
 
     <script src="./scripts/app.js"></script>
   </body>
